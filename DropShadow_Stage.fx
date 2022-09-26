@@ -163,7 +163,7 @@ VS_OUTPUT VS_passY( float4 Pos : POSITION, float4 Tex : TEXCOORD0 ){
     Out.Pos = Pos;
     Out.Pos.zw = 1;
     WorldPos.x *= -1;
-	Out.TexScene = Tex + ViewportOffset;
+    Out.TexScene = Tex + ViewportOffset;
     Tex.xy += WorldPos.xy*0.01;
     Tex.xy += float2(-0.5,-0.5);
     Tex.xy *= 1+WorldPos.z*0.01;
