@@ -6,5 +6,3 @@ HOW TO USE:
 CREDITS:
 	Original effect by ビームマンＰ
 	Edited by KH40
-
-
