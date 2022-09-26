@@ -1,7 +1,7 @@
 
-//Edited to work with stage by KH40
+//Edited to work with stage by KH40 (https://github.com/KH40-khoast40/DropShadow_Stage)
 
-//F
+//è‰²
 float3 DropColor
 <
    string UIName = "DropColor";
@@ -19,7 +19,7 @@ static float TexLoop = Scale*0.1;
 static float GauseParam = (1-Alpha)*10;
 
 
-//ƒpƒ^[ƒ“ƒeƒNƒXƒ`ƒƒ
+//ãƒ‘ã‚¿ãƒ¼ãƒ³ãƒ†ã‚¯ã‚¹ãƒãƒ£
 texture2D BackTex <
     string ResourceName = "Tex.png";
 >;
@@ -49,9 +49,9 @@ sampler DropMap = sampler_state {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-// ‚Ú‚©‚µˆ—‚Ìd‚İŒW”F
-//    ƒKƒEƒXŠÖ” exp( -x^2/(2*d^2) ) ‚ğ d=5, x=0`7 ‚É‚Â‚¢‚ÄŒvZ‚µ‚½‚Ì‚¿A
-//    (WT_7 + WT_6 + c + WT_1 + WT_0 + WT_1 + c + WT_7) ‚ª 1 ‚É‚È‚é‚æ‚¤‚É³‹K‰»‚µ‚½‚à‚Ì
+// ã¼ã‹ã—å‡¦ç†ã®é‡ã¿ä¿‚æ•°ï¼š
+//    ã‚¬ã‚¦ã‚¹é–¢æ•° exp( -x^2/(2*d^2) ) ã‚’ d=5, x=0ï½7 ã«ã¤ã„ã¦è¨ˆç®—ã—ãŸã®ã¡ã€
+//    (WT_7 + WT_6 + â€¦ + WT_1 + WT_0 + WT_1 + â€¦ + WT_7) ãŒ 1 ã«ãªã‚‹ã‚ˆã†ã«æ­£è¦åŒ–ã—ãŸã‚‚ã®
 #define  WT_0  0.0920246
 #define  WT_1  0.0902024
 #define  WT_2  0.0849494
@@ -64,7 +64,7 @@ sampler DropMap = sampler_state {
 
 
 
-// ƒXƒNƒŠ[ƒ“ƒTƒCƒY
+// ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚µã‚¤ã‚º
 float2 ViewportSize : VIEWPORTPIXELSIZE;
 
 static float2 ViewportOffset = (float2(0.5,0.5)/ViewportSize);
@@ -72,11 +72,11 @@ static float2 ViewportOffset = (float2(0.5,0.5)/ViewportSize);
 static float2 SampStep = (float2(GauseParam,GauseParam)/ViewportSize);
 
 
-// ƒŒƒ“ƒ_ƒŠƒ“ƒOƒ^[ƒQƒbƒg‚ÌƒNƒŠƒA’l
+// ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ã‚¯ãƒªã‚¢å€¤
 float4 ClearColor = {0,0,0,0};
 float ClearDepth  = 1.0;
 
-// ƒIƒŠƒWƒiƒ‹‚Ì•`‰æŒ‹‰Ê‚ğ‹L˜^‚·‚é‚½‚ß‚ÌƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg
+// ã‚ªãƒªã‚¸ãƒŠãƒ«ã®æç”»çµæœã‚’è¨˜éŒ²ã™ã‚‹ãŸã‚ã®ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ
 texture2D ScnMap : RENDERCOLORTARGET <
     float2 ViewPortRatio = {1.0,1.0};
     int MipLevels = 1;
@@ -96,7 +96,7 @@ texture2D DepthBuffer : RENDERDEPTHSTENCILTARGET <
     string Format = "D24S8";
 >;
 
-// X•ûŒü‚Ì‚Ú‚©‚µŒ‹‰Ê‚ğ‹L˜^‚·‚é‚½‚ß‚ÌƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg
+// Xæ–¹å‘ã®ã¼ã‹ã—çµæœã‚’è¨˜éŒ²ã™ã‚‹ãŸã‚ã®ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ
 texture2D ScnMap2 : RENDERCOLORTARGET <
     float2 ViewPortRatio = {1.0,1.0};
     int MipLevels = 1;
@@ -112,7 +112,7 @@ sampler2D ScnSamp2 = sampler_state {
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// X•ûŒü‚Ú‚©‚µ
+// Xæ–¹å‘ã¼ã‹ã—
 
 struct VS_OUTPUT {
     float4 Pos			: POSITION;
@@ -154,7 +154,7 @@ float4 PS_passX( float2 Tex: TEXCOORD0 ) : COLOR {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// Y•ûŒü‚Ú‚©‚µ
+// Yæ–¹å‘ã¼ã‹ã—
 
 VS_OUTPUT VS_passY( float4 Pos : POSITION, float4 Tex : TEXCOORD0 ){
     VS_OUTPUT Out = (VS_OUTPUT)0; 
