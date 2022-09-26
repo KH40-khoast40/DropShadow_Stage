@@ -6,7 +6,7 @@ An edited version of DropShadow by ビームマンＰ for it to work inside the 
 # Usage
 Uncheck the stage in **"DropShadowRT"** tab for the model's drop shadow to appear inside the stage. Everything else work the same way as the original version
 
-*(Notice that skyboxes are counted as stages too, uncheck them as well)*
+*(Notice that skyboxes are counted as stages too)*
 
 <img src="https://i.imgur.com/ya9FdXd.pngg" alt="alt text">
 
