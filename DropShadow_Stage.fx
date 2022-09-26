@@ -116,9 +116,9 @@ sampler2D ScnSamp2 = sampler_state {
 
 struct VS_OUTPUT {
     float4 Pos			: POSITION;
-	float2 Tex			: TEXCOORD0;
-	float2 Tex2			: TEXCOORD1;
-	float2 TexScene		: TEXCOORD2;
+    float2 Tex			: TEXCOORD0;
+    float2 Tex2			: TEXCOORD1;
+    float2 TexScene		: TEXCOORD2;
 };
 
 VS_OUTPUT VS_passX( float4 Pos : POSITION, float4 Tex : TEXCOORD0 ) {
